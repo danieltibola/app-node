@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "App test for restful application",
+  "main": "./bin/www",
+  "scripts": {
+    "start": "node ./bin/www",
+    "nodemon": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Tibola  <danieltibola@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "method-override": "^2.3.5"
+  }
+}
