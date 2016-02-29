@@ -1,24 +1,17 @@
 var express = require('express');
 var router = express.Router();
+var mongo = require('../db/mongo');
+var StormtropperModel = require('../models/StormtropperModel')(mongo);
+var StormtropperController = require('../controllers/StormtropperController')(StormtropperModel);
 
-router.get('/', function(request, response) {
-	response.send('get all stormtroppers');
-});
+router.get('/', StormtropperController.getAll.bind(StormtropperController));
 
-router.get('/:_id', function(request, response){
-	response.send('get a specific stormtropper by id');
-});
+router.get('/:_id', StormtropperController.getById.bind(StormtropperController));
 
-router.post('/', function(request, response){
-	response.send('create a new stormtropper');
-});
+router.post('/', StormtropperController.create.bind(StormtropperController));
 
-router.put('/:id', function(request, response){
-	response.send('update a stormtropper');
-});
+router.put('/:id', StormtropperController.update.bind(StormtropperController));
 
-router.delete('/:id', function(request, response){
-	response.send('delete a stormtropper');
-});
+router.delete('/:id', StormtropperController.remove.bind(StormtropperController));
 
 module.exports = router;
