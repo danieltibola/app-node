@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express.Router;
+var router = express.Router();
 
 router.get('/', function(request, response) {
 	response.send('get all stormtroppers');
